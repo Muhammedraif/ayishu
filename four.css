@@ -1,0 +1,202 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.welcome-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeOut 5s forwards;
+}
+
+.welcome-title {
+    font-size: 4em;
+    margin-top: 20px;
+    color: #ff6f61;
+    animation: bounce 2s infinite;
+}
+
+.balloons, .flowers {
+    font-size: 3em;
+    animation: spread 3s ease-in-out forwards;
+}
+
+.balloons {
+    animation-delay: 0.5s;
+}
+
+.flowers {
+    animation-delay: 1s;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #ffccbc;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+}
+
+.hero-title {
+    font-size: 3em;
+    color: #ff6f61;
+    animation: nightAnimation 3s infinite alternate;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff4f41;
+}
+
+.message, .gallery {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.message h2, .gallery h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.gallery .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 48%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.surprise {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none;
+    z-index: 1000;
+    animation: popUp 0.5s ease-out;
+}
+
+.cake-animation {
+    margin-top: 20px;
+}
+
+.cake {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #fff3e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.candles .candle {
+    font-size: 2em;
+    animation: surpriseAnimation 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; display: none; }
+}
+
+@keyframes popUp {
+    from { transform: translate(-50%, -60%) scale(0.9); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes nightAnimation {
+    from { color: #ff6f61; }
+    to { color: #ff4081; }
+}
+
+@keyframes surpriseAnimation {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+@keyframes spread {
+    0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+}
